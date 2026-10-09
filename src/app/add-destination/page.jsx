@@ -19,7 +19,7 @@ const AddDestinationPage = () => {
         })
         const data =await res.json()
         console.log(data);
-        toast.success('Successfully added destination')
+        toast.success('Successfully added destination');
         
     } 
     return (
