@@ -1,10 +1,12 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuArrowUpRight, LuCalendarDays } from "react-icons/lu";
 
 const DestinationCard = ({ destination }) => {
   const {
+    _id,
     imageUrl,
     destinationName,
     country,
@@ -56,13 +58,12 @@ const DestinationCard = ({ destination }) => {
       </div>
 
       {/* Booking Link */}
-      <a
-        href="/booking"
-        className="mt-5 inline-flex items-center gap-2 border-b-2 border-cyan-500 pb-1 font-semibold text-cyan-600 transition-colors hover:border-cyan-700 hover:text-cyan-700"
-      >
+     <Link href={`/destinations/${_id}`}>
+      <button className="group flex cursor-pointer items-center gap-2 border-b-2 border-cyan-500 pb-1 font-semibold text-cyan-600 transition-colors hover:border-cyan-700 hover:text-cyan-700">
         BOOK NOW
         <LuArrowUpRight className="text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-      </a>
+      </button>
+    </Link>
 
     </div>
    </div>
